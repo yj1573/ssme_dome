@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    #环境选择
+    active: dev
+  cache:
+    jcache:
+      config: classpath:ehcache3.xml
+
+#配置mybatis
+mybatis:
+  #配置*.xml输入
+  mapper-locations: classpath:mapper/*.xml
+  #配置实体类别名
+  type-aliases-package: com.yj.model
+
+#配置日志输出文件配置
+logging:
+  config: classpath:logback-spring.xml
+
+#pagehelper
+#pagehelper:
+#    helperDialect: mysql
+#    reasonable: true
+#    supportMethodsArguments: true
+#    params: count=countSql
+#    returnPageInfo: check
