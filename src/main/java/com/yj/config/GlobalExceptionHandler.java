@@ -12,9 +12,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public String defultExcepitonHandler(HttpServletRequest request, Exception e) {
+    public RModel defultExcepitonHandler(HttpServletRequest request, Exception e) {
         e.printStackTrace();
-        return  "error";
 
+        return  RModel.err().setData(e);
     }
 }

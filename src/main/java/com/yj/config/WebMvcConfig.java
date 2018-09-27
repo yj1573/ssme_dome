@@ -20,14 +20,14 @@ public class WebMvcConfig implements WebMvcConfigurer  {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
         .allowedOrigins("*")
-        .allowedMethods("get","post")
+        .allowedMethods("GET","POST")//必须是大写
         .allowedHeaders("");//.allowCredentials(true).maxAge(3600)
     }
 
     //静态资源配置
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        //swagger2访问配置
+        //swagger2访问配置,不使用@EnableWebMvc注解不需要配置
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**")
