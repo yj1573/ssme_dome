@@ -4,12 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yj.mapper.UserMapper">
 
-    <insert id="saveUser"  useGeneratedKeys="true" keyProperty="userid" parameterType="User">
-        insert into users(userid,username,passwd) values(#{userid},#{username},#{passwd})
+    <insert id="saveUser"  useGeneratedKeys="true" keyProperty="id" parameterType="User">
+        insert into users(id,user_name,passwd) values(#{id},#{user_name},#{passwd})
     </insert>
 
     <select id="userLogin" resultType="User" parameterType="java.util.Map">
-        select * from users where username=#{username} and passwd=#{passwd}
+        select * from users where user_name=#{user_name} and passwd=#{passwd}
     </select>
 
 
