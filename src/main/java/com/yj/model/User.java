@@ -1,23 +1,25 @@
 package com.yj.model;
 
 public class User {
-    private Integer userid;
-    private String username;
+    private Integer id;
+    private String user_name;
     private String passwd;
     private String token;
-    public Integer getUserid() {
-        return userid;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
-    }
-    public String getUsername() {
-        return username;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getPasswd() {
@@ -39,8 +41,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userid=" + userid +
-                ", username='" + username + '\'' +
+                "id=" + id +
+                ", user_name='" + user_name + '\'' +
                 ", passwd='" + passwd + '\'' +
                 ", token='" + token + '\'' +
                 '}';

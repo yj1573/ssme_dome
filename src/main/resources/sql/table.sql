@@ -25,6 +25,7 @@ create table role(
 id int(11) UNSIGNED not NULL AUTO_INCREMENT,
 role_name varchar(20) DEFAULT '' COMMENT '角色名称',
 pid int(11) UNSIGNED DEFAULT '0' COMMENT '父角色id',
+description varchar(100) DEFAULT '' COMMENT '角色说明',
 gmt_create datetime DEFAULT null COMMENT '创建时间',
 PRIMARY key (id)
 )ENGINE=INNODB charset=utf8mb4;
