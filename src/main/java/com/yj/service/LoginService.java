@@ -23,7 +23,7 @@ public class LoginService {
     @Cacheable(value = "userCache",key = "#username",unless = "#result==null")
     public User loginUser(String username, String passwd){
         HashMap<String,String> map=new HashMap<>();
-        map.put("username",username);
+        map.put("user_name",username);
         map.put("passwd",passwd);
         User user=um.userLogin(map);
         log.info("从数据库查询到的数据{}",user);

@@ -3,6 +3,7 @@ package com.yj.config;
 import com.google.common.util.concurrent.RateLimiter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -17,6 +18,10 @@ public class RateLimitLnterceptor extends HandlerInterceptorAdapter {
     private static final RateLimiter rateLimiter = RateLimiter.create(200);
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String path=request.getRequestURI().toString();
+        log.info("请求路径 {}",path);
+        HandlerMethod hm= (HandlerMethod) handler;
+        log.info("请求方法 {}",hm.getMethod().getName());
         if (!rateLimiter.tryAcquire()) {
             log.info("当前服务器繁忙，请稍后再试");
             return false;
