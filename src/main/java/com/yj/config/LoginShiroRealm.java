@@ -1,6 +1,6 @@
 package com.yj.config;
 
-import com.yj.model.Authorization;
+import com.yj.model.Permission;
 import com.yj.model.Role;
 import com.yj.model.User;
 import com.yj.service.LoginService;
@@ -38,8 +38,8 @@ public class LoginShiroRealm extends AuthorizingRealm {
             //添加角色
             //simpleAuthorizationInfo.addRole(role.getRole_name());
             //查找权限
-            List<Authorization> list =  null;//loginService.findAuthorizations(role.getId());
-            for (Authorization a : list) {
+            List<Permission> list =  null;//loginService.findAuthorizations(role.getId());
+            for (Permission a : list) {
                 //添加权限
                 //simpleAuthorizationInfo.addStringPermission(a.getAuthorization_name());
             }

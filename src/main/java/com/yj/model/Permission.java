@@ -2,10 +2,11 @@ package com.yj.model;
 
 import java.util.Date;
 
-public class Authorization {
+public class Permission {
     private Integer id;
     private Integer pid;
-    private String authorization_name;
+    private String permission_name;
+    private String alias;
     private Date gmt_create;
     private String description;
 
