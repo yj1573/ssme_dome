@@ -9,6 +9,13 @@ spring:
   cache:
     jcache:
       config: classpath:ehcache3.xml
+  #2.0之后文件上传限制配置
+  servlet:
+    multipart:
+      #单个文件大小
+      max-file-size: 10MB
+      #总文件大小
+      max-request-size: 10MB
 
 #配置mybatis
 mybatis:
