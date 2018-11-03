@@ -179,9 +179,15 @@
 
     <build>
         <plugins>
+            <!-- mybatis第二种方式数据库反向生成java -->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.7</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
             </plugin>
             <!--spring boot热部署配置IDEA-->
             <plugin>

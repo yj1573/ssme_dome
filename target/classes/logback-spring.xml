@@ -2,7 +2,7 @@
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
     <!--设置上下文名称-->
-    <contextName>日志</contextName>
+    <contextName>ssme</contextName>
 
     <!--配置logback自定义属性${}引用变量-->
     <property name="logback.logdir" value="d:/logs"/>
@@ -82,12 +82,14 @@
     <springProfile name="test,dev">
         <logger name="com.yj" level="DEBUG" additivity="false">
             <appender-ref ref="consoleLog"/>
+            <appender-ref ref="fileErrorLog"/>
         </logger>
     </springProfile>
     <!--生产环境-->
     <springProfile name="prod">
         <logger name="com.yj" level="INFO" additivity="false">
             <appender-ref ref="consoleLog"/>
+            <appender-ref ref="fileErrorLog"/>
         </logger>
     </springProfile>
 
