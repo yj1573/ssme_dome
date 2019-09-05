@@ -1,10 +1,7 @@
 package com.yj.utils.poi;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -40,6 +37,7 @@ public class ReadExcelBean {
     public static ReadExcelBean createReadExcelBean(int startSheet, int endSheet, int startRow, int startColumn, int endColumn) {
         return new ReadExcelBean(startSheet, endSheet, startRow, startColumn, endColumn);
     }
+
 
     /**
      * 获取结果
@@ -107,7 +105,7 @@ public class ReadExcelBean {
                         for (int col = startColumn; col < endColumn; col++) {
                             Cell cell = row.getCell(col);
                             if (cell != null) {
-                                cell.setCellType(Cell.CELL_TYPE_STRING);
+                                cell.setCellType(CellType.STRING);
                                 rowList.add(this.getVal(cell));
                             }
                         }
@@ -122,7 +120,6 @@ public class ReadExcelBean {
     private String getVal(Cell cell) {
         return cell.getStringCellValue().replace("\n", "").replace("\r", "").trim();
     }
-
 
 
 }

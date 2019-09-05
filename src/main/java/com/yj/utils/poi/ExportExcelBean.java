@@ -113,16 +113,16 @@ public class ExportExcelBean {
         //设置字体类型1到12号，蓝色和粗体
         font1.setFontHeightInPoints((short) 12);
         font1.setColor((short) 10);
-        font1.setBoldweight(Font.BOLDWEIGHT_BOLD);
+        font1.setBold(true);
         //设置字体类型2到10号，红色和粗体
         font2.setFontHeightInPoints((short) 10);
         font2.setColor((short) 10);
-        font2.setBoldweight(Font.BOLDWEIGHT_BOLD);
+        font2.setBold(true);
         //设置单元格样式和格式
         style.setFont(font1);
         style.setDataFormat(df.getFormat("#,##0.0"));
         //设置其他单元格样式和格式
-        style2.setBorderBottom(CellStyle.BORDER_THIN);
+        style2.setBorderBottom(BorderStyle.THIN);
         style2.setDataFormat((short) 49);
         style2.setFont(font2);
     }
